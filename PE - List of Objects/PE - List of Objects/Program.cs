@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace PE___List_of_Objects
 {
@@ -20,6 +21,46 @@ namespace PE___List_of_Objects
             int choice;
             string input;
             string newMajor;
+            string[] data;
+
+            //file name
+            string fileName = "../../allStudents.txt";
+
+            //creates stream reader and writer for the file
+            StreamReader reader = new StreamReader(fileName);
+            StreamWriter writer = new StreamWriter(fileName);
+
+            //Current line being read
+            string line;
+
+            try
+            {
+                //loop through file while there is something to be read
+                while((line = reader.ReadLine()) != null)
+                {
+                    //adds each piece of information to an array
+                    data = line.Split(',');
+
+                    //creates Student object from read information
+                    Student obj = new Student(data[0], data[1], int.Parse(data[2]));
+
+                    //adds temp student object to studentsList
+                    studentsList.Add(obj);
+
+                    //if the year is one adds to freshmanList
+                    if(obj.Year == 1)
+                    {
+                        freshmanList.Add(obj);
+                    }
+                }
+                reader.Close();
+
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("File Could not be found");
+            }
+
 
             //Loop that asks for user input until users quits
 
