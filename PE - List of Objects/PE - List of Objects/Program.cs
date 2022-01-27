@@ -28,7 +28,6 @@ namespace PE___List_of_Objects
 
             //creates stream reader and writer for the file
             StreamReader reader = new StreamReader(fileName);
-            StreamWriter writer = new StreamWriter(fileName);
 
             //Current line being read
             string line;
@@ -71,6 +70,7 @@ namespace PE___List_of_Objects
                 "2 - Change major for a student\n" +
                 "3 - Print the rosters\n" +
                 "4 - Quit\n" +
+                "5 - Save\n" +
                 "> ");
                 choice = int.Parse(Console.ReadLine());
 
@@ -118,6 +118,16 @@ namespace PE___List_of_Objects
 
                     //Program ends
                     case 4:                        
+                        break;
+
+                    // save data to allStudents.txt
+                    case 5:
+                        StreamWriter writer = new StreamWriter(fileName);
+                        foreach (Student s in studentsList)
+                        {
+                            writer.WriteLine(s.Name + "," + s.Major + "," + s.Year);
+                        }
+                        writer.Close();
                         break;
 
                     //If any other number is given
