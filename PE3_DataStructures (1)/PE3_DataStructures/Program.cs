@@ -10,29 +10,38 @@ namespace PE3_DataStructures
     {
         static void Main(string[] args)
         {
-            /*
-            // Scenario 1
-            List<string> pets1 = new List<string>();
-            pets1.Add("Pax");
-            pets1.Add("Aiden");
+            
+            //// Scenario 1
+            //List<string> pets1 = new List<string>();
+            //pets1.Add("Pax");
+            //pets1.Add("Aiden");
+            //pets1[0] = "joe:;";
 
-            // Scenario 2
-            Pet[] pets2 = new Pet[5];
-            pets2[0] = new Pet();
-            pets2[1] = new Pet("Lacy", 7.5);
+            //// Scenario 2
+            //Pet[] pets2 = new Pet[5];
+            //pets2[0] = new Pet();
+            //pets2[1] = new Pet("Lacy", 7.5);
 
-            // Scenario 3
-            List<Pet> pets3 = new List<Pet>();
-            pets3.Add(new Pet("Pax", 80));
-            pets3.Add(new Pet());
+            //// Scenario 3
+            //List<Pet> pets3 = new List<Pet>();
+            //pets3.Add(new Pet("Pax", 80));
+            //pets3.Add(new Pet());
 
 
             // Scenario 4
             // create 4x4 2D array
-            bool[,] board = new bool[4, 4];
+            bool[,] board = new bool[5, 4];
+            bool[,] array2D = new bool[7, 8];
 
-            
+            string myName = "Shiro";
 
+            for (int i = 0; i < myName.Length; i += 2)
+            {
+                Console.WriteLine(myName[i]);
+            }
+
+
+            Console.WriteLine(board.Length);
 
             // nested loop thru each row + column
             for (int row = 0; row < board.GetLength(0); row++)
@@ -43,7 +52,7 @@ namespace PE3_DataStructures
                     board[row, col] = row % 2 == col % 2;
                 }
             }
-            /*  testing by writing to console
+            //  testing by writing to console
             for (int row = 0; row < 4; row++)
             {
                 for (int col = 0; col < 4; col++)
@@ -77,7 +86,7 @@ namespace PE3_DataStructures
             familyPets[3].Add(new Pet("Indy", 75));
             familyPets[3].Add(new Pet("Odin", 93));
 
-            */
+            
 
 
             // Scenario 7
