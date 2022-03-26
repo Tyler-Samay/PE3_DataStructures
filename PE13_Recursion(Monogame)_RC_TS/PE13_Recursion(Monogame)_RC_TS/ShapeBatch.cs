@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace ShapeBatch
+namespace PE13_Recursion_Monogame__RC_TS
 {
 	/// <summary>
 	/// Allows simple shapes to be drawn in MonoGame.  These shapes
