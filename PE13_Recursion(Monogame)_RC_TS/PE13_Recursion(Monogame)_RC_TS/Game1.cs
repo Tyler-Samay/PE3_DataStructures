@@ -55,8 +55,9 @@ namespace PE13_Recursion_Monogame__RC_TS
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            ShapeBatch.Begin(GraphicsDevice);
-            RecursiveTree(new Vector2(50, 50), 50f, 0f);
+            ShapeBatch.Begin(_graphics.GraphicsDevice);
+            RecursiveTree(new Vector2(_graphics.GraphicsDevice.Viewport.Width / 2,
+                _graphics.GraphicsDevice.Viewport.Height), 75f, 1.5f);
             ShapeBatch.End();
 
             base.Draw(gameTime);
@@ -87,15 +88,13 @@ namespace PE13_Recursion_Monogame__RC_TS
         }
         private void RecursiveTree(Vector2 position, float length, float angle)
         {
+            float lastPositionX = position.X;
+            float lastPositionY = position.Y;
             ShapeBatch.Line(position, length, angle, Color.White);
-            if (length < 5f)
+            if (length > 5f)
             {
-                ShapeBatch.Line(position, length, angle, Color.White);
-            }
-            else
-            {
-                RecursiveTree(position, 0.8f * length, 0.3f * angle);
-                
+                RecursiveTree((lastPositionX, lastPositionY), 0.8f * length, 1.05f * angle);
+                //RecursiveTree(new Vector2(position.X, lastPositionY), 0.8f * length, -1.05f * angle);
             }
         }
     }
