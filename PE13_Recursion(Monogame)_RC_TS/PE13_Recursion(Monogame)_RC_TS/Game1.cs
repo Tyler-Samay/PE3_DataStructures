@@ -48,5 +48,28 @@ namespace PE13_Recursion_Monogame__RC_TS
 
             base.Draw(gameTime);
         }
+
+        private bool IsPalindrome(string phrase, int startIndex, int endIndex)
+        {
+            
+
+            //Base case
+            //When letter at start and end index are not the same
+            if ()
+            {
+                return false;
+            }
+
+            //Recursive Case
+            //If the letter at start and index are the same
+            else if ()
+            {
+                //State Change
+                IsPalindrome(phrase, startIndex + 1, endIndex - 1);
+            }
+            
+
+        }
+
     }
 }
